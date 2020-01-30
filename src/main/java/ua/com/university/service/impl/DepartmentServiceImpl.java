@@ -29,8 +29,6 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public List<Department> getAllDepartments() {
         return departmentDao.findAllByNameIsNotNull();
-//        return departmentDao.getAll();
-//        return departmentDao.findAllWorkingDepartmentsByQuery();
     }
 
     public String getInfoAboutHeadOfDepartment(String name){

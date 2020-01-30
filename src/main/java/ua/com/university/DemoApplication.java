@@ -32,10 +32,8 @@ public class DemoApplication {
 	@Bean
 	public CommandLineRunner run(final LectorDao lectorDao, final DepartmentDao departmentDao, final RankDao rankDao, final DepartmentLectorDao departmentLectorDao, final DepartmentService departmentService, final DepartmentLectorService departmentLectorService) throws Exception {
 		return (String[] args) -> {
-			DatabaseFilling databaseFilling = new DatabaseFilling();
-			databaseFilling.fillDb(lectorDao,departmentDao,rankDao,departmentLectorDao);
-//			DepartmentLectorService departmentLectorService = new DepartmentLectorServiceImpl();
-//			DepartmentService departmentService = new DepartmentServiceImpl();
+//			DatabaseFilling databaseFilling = new DatabaseFilling();
+//			databaseFilling.fillDb(lectorDao,departmentDao,rankDao,departmentLectorDao);
 			UniversityConsoleView universityConsoleView = new UniversityConsoleView(departmentService,departmentLectorService);
 			lectorDao.findAll().forEach(lector -> System.out.println(lector));
 
