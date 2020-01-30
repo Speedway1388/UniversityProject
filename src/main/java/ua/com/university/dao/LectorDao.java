@@ -12,9 +12,7 @@ import java.util.List;
 public interface LectorDao extends JpaRepository<Lector, Long> {
     Lector getById(Long id);
 
-//    @Query("select name, sur_name from university.lector\n" +
-//            "where name like '%so%' or sur_name like '%searchword%'")
-    @Query("SELECT e from lector e where e.name like %:search_word% or e.surName like %:search_word%")
+    @Query(value = "SELECT * from lector l where l.name like %:search_word% or l.sur_name like %:search_word%",nativeQuery = true)
     List<Lector> searchForLectors(@Param("search_word") String searchword);
 
 
